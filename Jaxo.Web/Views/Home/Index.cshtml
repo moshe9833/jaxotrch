@@ -1,0 +1,128 @@
+@model List<CaseStudy>
+
+<section class="jx-dark jx-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="jx-eyebrow mb-3">Software development and consulting</p>
+                <h1 class="display-5 fw-semibold text-white mb-3">Custom software that runs your business</h1>
+                <p class="fs-5 mb-4" style="max-width: 560px;">From e-commerce platforms to internal systems, we design, build, and maintain the software your company depends on.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a class="btn btn-jaxo btn-lg" asp-action="Contact">Start a project</a>
+                    <a class="btn btn-jaxo-outline-light btn-lg" asp-action="Work">See our work</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="jx-section">
+    <div class="container">
+        <p class="jx-eyebrow mb-2">Case studies</p>
+        <h2>Real problems we've solved</h2>
+        <p class="jx-lead mb-4">Every business is different. Here's what that looks like in practice.</p>
+        <div class="row g-3">
+            @foreach (var cs in Model)
+            {
+                <div class="col-md-4">
+                    <a class="jx-card" href="/work/@cs.Slug">
+                        <p class="jx-industry mb-2">@cs.Industry</p>
+                        <h3>@cs.Title</h3>
+                        <p>@cs.Summary</p>
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="mt-4">
+            <a class="btn btn-jaxo-outline" asp-action="Work">All case studies</a>
+        </div>
+    </div>
+</section>
+
+<section class="jx-section jx-section-light">
+    <div class="container">
+        <p class="jx-eyebrow mb-2">Services</p>
+        <h2>What we build</h2>
+        <p class="jx-lead mb-4">Plain-language services, backed by two decades of engineering.</p>
+        <div class="row g-3">
+            <div class="col-md-6 col-lg-3">
+                <a class="jx-card" href="/services#ecommerce">
+                    <h3>E-commerce</h3>
+                    <p>Online stores, checkout, shipping, and payment integrations that convert and scale.</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a class="jx-card" href="/services#systems">
+                    <h3>Business systems</h3>
+                    <p>Order management, billing, and the custom internal software spreadsheets can't handle.</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a class="jx-card" href="/services#integrations">
+                    <h3>Integrations</h3>
+                    <p>Shipping carriers, payment processors, and accounting systems talking to each other.</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a class="jx-card" href="/services#cloud">
+                    <h3>Cloud and hosting</h3>
+                    <p>Azure infrastructure, migrations, and rescues when your current host is failing you.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="jx-dark jx-section">
+    <div class="container">
+        <p class="jx-eyebrow mb-2">How we work</p>
+        <h2 class="text-white">Clear steps, clear billing</h2>
+        <p class="mb-5" style="max-width: 560px;">Every project gets a written estimate up front and is billed by task, so you always know what you're paying for. No surprise invoices.</p>
+        <div class="row g-4">
+            <div class="col-md-4 jx-step">
+                <svg width="40" height="40" viewBox="0 0 34 34" aria-hidden="true">
+                    <circle cx="17" cy="17" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
+                    <path d="M17 5 A12 12 0 0 1 27.4 11" stroke="#2EE6A8" stroke-width="5" fill="none" stroke-linecap="round"/>
+                </svg>
+                <h3 class="fs-5 fw-semibold text-white mt-3 mb-1">Plan</h3>
+                <p>We scope the work together, agree on an estimate, and map the roadmap before anything is built.</p>
+            </div>
+            <div class="col-md-4 jx-step">
+                <svg width="40" height="40" viewBox="0 0 34 34" aria-hidden="true">
+                    <circle cx="17" cy="17" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
+                    <path d="M17 5 A12 12 0 1 1 5 17" stroke="#2EE6A8" stroke-width="5" fill="none" stroke-linecap="round"/>
+                </svg>
+                <h3 class="fs-5 fw-semibold text-white mt-3 mb-1">Build</h3>
+                <p>Development in short, visible cycles. You see progress as it happens, not at the end.</p>
+            </div>
+            <div class="col-md-4 jx-step">
+                <svg width="40" height="40" viewBox="0 0 34 34" aria-hidden="true">
+                    <circle cx="17" cy="17" r="12" stroke="#2EE6A8" stroke-width="5" fill="none"/>
+                    <path d="M11.5 17 L15.5 21 L23 13" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="fs-5 fw-semibold text-white mt-3 mb-1">Launch and support</h3>
+                <p>We ship, monitor, and stay on. Most of our clients have been with us for years.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="jx-section">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <p class="jx-eyebrow mb-2">About</p>
+                <h2>A small team that answers the phone</h2>
+                <p class="jx-lead">Jaxo is a New York software consultancy. When you call, you talk to the people who actually build your software — no account managers, no offshore hand-offs, no runaround.</p>
+                <a class="btn btn-jaxo-outline mt-2" asp-action="About">More about us</a>
+            </div>
+            <div class="col-lg-5">
+                <div class="jx-card">
+                    <h3 class="mb-3">Have a project in mind?</h3>
+                    <p class="mb-3">Tell us what you're trying to do. We'll come back with questions and a straight answer on whether we can help.</p>
+                    <a class="btn btn-jaxo" asp-action="Contact">Get a quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

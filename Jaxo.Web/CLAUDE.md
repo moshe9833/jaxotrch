@@ -1,0 +1,38 @@
+# CLAUDE.md — Jaxo.Web (jaxotech.com)
+
+## What this is
+Brochure/marketing site for Jaxo, the new client-facing brand of MBNC Inc.
+ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Service.
+
+## Brand (do not drift)
+- Name: Jaxo (lowercase "jaxo" in the wordmark). Domain: jaxotech.com
+- Colors: navy #0B1E3F (anchor), mint #2EE6A8 (accent only — buttons, arcs, the "o"),
+  light #F4F6FA. All defined as --jaxo-* CSS variables in wwwroot/css/site.css.
+- Logo: "variant B" — the letters "jax" plus a drawn ring "o" (stroke matches font
+  weight, mint arc top-right). Inline SVG in _Layout.cshtml; assets in wwwroot/img.
+- The ring is the design system: ring bullets (ul.jx-list), progress arcs on the
+  Plan/Build/Launch steps, pill buttons. Mint is used sparingly — never as a background.
+- Voice: plain language, outcomes not technology, sentence case, no corporate filler.
+
+## Structure
+- One controller (HomeController): Index, Services, Work, CaseStudy(slug), About,
+  Contact (GET/POST), ContactThanks, Privacy, Terms, NotFound, Error.
+- Routes: /work/{slug} for case studies; everything else is /{action}.
+- Case study content: Data/case-studies.json (edit content there, not in views).
+- Contact form: server validation + honeypot (Website field) + SendGrid
+  (Services/Services.cs). No API key in dev = logs instead of sending.
+
+## Config
+- SendGrid key via user-secrets locally, SendGrid__ApiKey app setting in Azure.
+- Sender no-reply@jaxotech.com must be verified in SendGrid before go-live.
+
+## Conventions (owner: Moshe, MBNC Inc.)
+- Bootstrap 5 + custom CSS on top; no CSS frameworks beyond that, no SPA.
+- Keep it a brochure site: no database, no CMS, no blog unless explicitly asked.
+- Code-first, concise responses. Bill-by-task mindset: small, reviewable commits.
+
+## Known TODOs
+- About page says "20+ years" — confirm real number with Moshe.
+- Case studies have qualitative results; replace with real numbers when available.
+- Favicon is SVG only; add .ico fallback for old browsers if desired.
+- OG/social meta tags not yet added.

@@ -1,0 +1,32 @@
+@model IReadOnlyList<CaseStudy>
+
+<section class="jx-dark jx-section">
+    <div class="container">
+        <p class="jx-eyebrow mb-3">Our work</p>
+        <h1 class="display-6 fw-semibold text-white mb-3">Case studies</h1>
+        <p class="fs-5" style="max-width: 620px;">Real projects for real businesses. Names are withheld out of respect for our clients — the problems and results are exactly as they happened.</p>
+    </div>
+</section>
+
+<section class="jx-section">
+    <div class="container">
+        <div class="row g-3">
+            @foreach (var cs in Model)
+            {
+                <div class="col-md-6">
+                    <a class="jx-card" href="/work/@cs.Slug">
+                        <p class="jx-industry mb-2">@cs.Industry</p>
+                        <h3>@cs.Title</h3>
+                        <p class="mb-3">@cs.Summary</p>
+                        <div>
+                            @foreach (var tag in cs.Tags)
+                            {
+                                <span class="jx-tag">@tag</span>
+                            }
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+@model CaseStudy
+
+<section class="jx-dark jx-section">
+    <div class="container">
+        <p class="jx-eyebrow mb-3">@Model.Industry</p>
+        <h1 class="display-6 fw-semibold text-white mb-3" style="max-width: 700px;">@Model.Title</h1>
+        <div>
+            @foreach (var tag in Model.Tags)
+            {
+                <span class="jx-tag">@tag</span>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="jx-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 jx-article">
+                <h2 class="mt-0">The problem</h2>
+                <p>@Model.Problem</p>
+                <h2>What we built</h2>
+                <p>@Model.Solution</p>
+                <h2>The result</h2>
+                <p>@Model.Result</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="jx-card mt-4 mt-lg-0">
+                    <h3 class="mb-2">Facing something similar?</h3>
+                    <p class="mb-3">Tell us about it. We'll give you a straight answer on what it takes.</p>
+                    <a class="btn btn-jaxo" asp-action="Contact">Get a quote</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5">
+            <a class="btn btn-jaxo-outline" asp-action="Work">&larr; All case studies</a>
+        </div>
+    </div>
+</section>

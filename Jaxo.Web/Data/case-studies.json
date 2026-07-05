@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "ecommerce-cloud-migration",
+    "industry": "Commercial door hardware distributor",
+    "title": "E-commerce rescue and cloud migration",
+    "summary": "A struggling storefront on shared hosting, migrated to Azure with zero downtime and rebuilt for speed.",
+    "problem": "Their online store ran on shared hosting that couldn't keep up. Pages were slow, outages were frequent, and there was no room to grow. The platform held years of product data and live customer orders, so any migration had to happen without taking the business offline.",
+    "solution": "We migrated the entire platform, including a 25GB product database, to Microsoft Azure with a modern setup: dedicated app hosting, managed MySQL, Redis caching, and a global CDN. Then we went after performance directly, lazy-loading third-party scripts, removing duplicate analytics tags, and optimizing the storefront page by page.",
+    "result": "The migration completed with zero downtime, and page load times dropped dramatically. The store now runs on infrastructure that scales with the business instead of holding it back.",
+    "tags": ["E-commerce", "Azure", "Performance"]
+  },
+  {
+    "slug": "shipping-automation",
+    "industry": "National check printing and fulfillment company",
+    "title": "Shipping automation for a high-volume printer",
+    "summary": "FedEx and UPS integrated directly into the order system: live rates, automatic labels, and per-package cost tracking.",
+    "problem": "Every order meant manual carrier lookups and hand-built shipping labels across FedEx and UPS. At their volume, that was hours of repetitive work each day, and nobody knew what any individual shipment actually cost.",
+    "solution": "We integrated both carriers' APIs directly into their order system: live negotiated rates with transit times shown at checkout, automatic label generation the moment an order is ready, and per-package cost allocation tied back to every order.",
+    "result": "Label creation went from a manual step to fully automatic, and shipping costs are now allocated to the penny on every order. The team ships more in less time, with real numbers behind every decision.",
+    "tags": ["Integrations", "FedEx", "UPS", "Automation"]
+  },
+  {
+    "slug": "email-security-fix",
+    "industry": "Envelope e-commerce retailer",
+    "title": "Finding and removing a hidden email exploit",
+    "summary": "A malicious injection buried in transactional email templates, found, removed, and locked down.",
+    "problem": "Something was off with the company's transactional emails. Deliverability was suffering and customers were reporting messages that didn't look right. The templates had been touched by several vendors over the years, and nobody knew what was inside them anymore.",
+    "solution": "We audited every email template in the system and found a malicious injection hidden in the markup. We removed it, rebuilt the affected templates cleanly, and tightened the sending pipeline, including suppression list management, so the same door couldn't be opened again.",
+    "result": "Clean templates, restored deliverability, and a documented email pipeline the owner can trust. Sometimes the most valuable work is the problem a client didn't know they had.",
+    "tags": ["Security", "Email", "Audit"]
+  },
+  {
+    "slug": "engineering-automation",
+    "industry": "Fire protection design firm, New York",
+    "title": "Automating sprinkler system drafting",
+    "summary": "A custom AutoCAD plugin that reads floor plans and places sprinkler heads to code automatically.",
+    "problem": "Sprinkler system drafting meant hours of repetitive AutoCAD work on every project: placing heads room by room and routing pipe, all while keeping every placement compliant with NFPA-13 and NYC building code.",
+    "solution": "We built a custom AutoCAD plugin that reads the floor plan, extracts rooms automatically from the drawing's own labels, and places sprinkler heads according to code requirements. The engineer reviews and adjusts instead of drafting from scratch.",
+    "result": "Drafting time per drawing dropped from hours to minutes, and code compliance is built into every placement instead of checked after the fact.",
+    "tags": ["AutoCAD", "Automation", "Engineering"]
+  }
+]

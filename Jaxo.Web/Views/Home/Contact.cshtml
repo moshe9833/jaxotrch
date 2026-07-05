@@ -1,0 +1,64 @@
+@model ContactForm
+
+<section class="jx-dark jx-section">
+    <div class="container">
+        <p class="jx-eyebrow mb-3">Contact</p>
+        <h1 class="display-6 fw-semibold text-white mb-3">Get a quote</h1>
+        <p class="fs-5" style="max-width: 620px;">Tell us what you're trying to do. We read every message and reply within one business day.</p>
+    </div>
+</section>
+
+<section class="jx-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <form class="jx-form" method="post" asp-action="Contact">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label fw-semibold">Name</label>
+                        <input asp-for="Name" class="form-control" autocomplete="name" />
+                        <span asp-validation-for="Name" class="text-danger small"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 mb-3">
+                            <label asp-for="Email" class="form-label fw-semibold">Email</label>
+                            <input asp-for="Email" class="form-control" autocomplete="email" />
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label asp-for="Phone" class="form-label fw-semibold">Phone <span class="fw-normal text-muted">(optional)</span></label>
+                            <input asp-for="Phone" class="form-control" autocomplete="tel" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Message" class="form-label fw-semibold">Tell us about your project</label>
+                        <textarea asp-for="Message" class="form-control" rows="6" placeholder="What are you trying to build or fix? What system are you using today?"></textarea>
+                        <span asp-validation-for="Message" class="text-danger small"></span>
+                    </div>
+
+                    <div class="jx-hp" aria-hidden="true">
+                        <label asp-for="Website">Website</label>
+                        <input asp-for="Website" tabindex="-1" autocomplete="off" />
+                    </div>
+
+                    <button type="submit" class="btn btn-jaxo btn-lg">Send message</button>
+                </form>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="jx-card">
+                    <h3 class="mb-3">Prefer to talk?</h3>
+                    <p class="mb-2"><a href="mailto:info@jaxotech.com" class="text-decoration-none">info@jaxotech.com</a></p>
+                    <p class="mb-0 text-muted">Monroe, New York</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
+}
