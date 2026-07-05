@@ -12,6 +12,12 @@ ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Serv
   weight, mint arc top-right). Inline SVG in _Layout.cshtml; assets in wwwroot/img.
 - The ring is the design system: ring bullets (ul.jx-list), progress arcs on the
   Plan/Build/Launch steps, pill buttons. Mint is used sparingly — never as a background.
+- Extended ring system (site.css): hero watermark ring (_HeroRing.cshtml partial,
+  .jx-hero / .jx-hero-sm), ring glyph before eyebrows (.jx-eyebrow::before), ring "o"
+  in display text (.jx-o), card hover corner arc (a.jx-card::before), footer ring
+  divider + "Plan. Build. Launch. Full circle." tagline, 404 ring-as-zero, contact
+  submit ring spinner, scroll-drawn step arcs (wwwroot/js/site.js + .jx-arc/.jx-check).
+- Verbal hook: the arc closes when work ships — "full circle" = we launch and stay on.
 - Voice: plain language, outcomes not technology, sentence case, no corporate filler.
 
 ## Structure

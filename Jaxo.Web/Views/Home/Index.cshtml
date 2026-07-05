@@ -1,15 +1,15 @@
 @model List<CaseStudy>
 
 <section class="jx-dark jx-section jx-hero">
-    <svg class="jx-hero-ring" viewBox="0 0 540 540" aria-hidden="true">
-        <circle cx="270" cy="270" r="220" stroke="#2E4568" stroke-width="26" fill="none"/>
-        <path d="M270 50 A220 220 0 0 1 450 144" stroke="#2EE6A8" stroke-width="26" fill="none" stroke-linecap="round"/>
-    </svg>
+    <partial name="_HeroRing" />
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
                 <p class="jx-eyebrow mb-3">Software development and consulting</p>
-                <h1 class="display-5 fw-semibold text-white mb-3">Custom software that runs your business</h1>
+                <h1 class="display-5 fw-semibold text-white mb-3">
+                    <span class="visually-hidden">Custom software that runs your business</span>
+                    <span aria-hidden="true">Custom s<span class="jx-o"></span>ftware that runs your business</span>
+                </h1>
                 <p class="fs-5 mb-4" style="max-width: 560px;">From e-commerce platforms to internal systems, we design, build, and maintain the software your company depends on.</p>
                 <div class="d-flex gap-2 flex-wrap">
                     <a class="btn btn-jaxo btn-lg" asp-action="Contact">Start a project</a>
@@ -86,7 +86,7 @@
             <div class="col-md-4 jx-step">
                 <svg width="40" height="40" viewBox="0 0 34 34" aria-hidden="true">
                     <circle cx="17" cy="17" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
-                    <path d="M17 5 A12 12 0 0 1 27.4 11" stroke="#2EE6A8" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <path class="jx-arc" pathLength="1" d="M17 5 A12 12 0 0 1 27.4 11" stroke="#2EE6A8" stroke-width="5" fill="none" stroke-linecap="round"/>
                 </svg>
                 <h3 class="fs-5 fw-semibold text-white mt-3 mb-1">Plan</h3>
                 <p>We scope the work together, agree on an estimate, and map the roadmap before anything is built.</p>
@@ -94,15 +94,15 @@
             <div class="col-md-4 jx-step">
                 <svg width="40" height="40" viewBox="0 0 34 34" aria-hidden="true">
                     <circle cx="17" cy="17" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
-                    <path d="M17 5 A12 12 0 1 1 5 17" stroke="#2EE6A8" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <path class="jx-arc" pathLength="1" d="M17 5 A12 12 0 1 1 5 17" stroke="#2EE6A8" stroke-width="5" fill="none" stroke-linecap="round"/>
                 </svg>
                 <h3 class="fs-5 fw-semibold text-white mt-3 mb-1">Build</h3>
                 <p>Development in short, visible cycles. You see progress as it happens, not at the end.</p>
             </div>
             <div class="col-md-4 jx-step">
                 <svg width="40" height="40" viewBox="0 0 34 34" aria-hidden="true">
-                    <circle cx="17" cy="17" r="12" stroke="#2EE6A8" stroke-width="5" fill="none"/>
-                    <path d="M11.5 17 L15.5 21 L23 13" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="jx-arc" pathLength="1" cx="17" cy="17" r="12" stroke="#2EE6A8" stroke-width="5" fill="none"/>
+                    <path class="jx-check" pathLength="1" d="M11.5 17 L15.5 21 L23 13" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <h3 class="fs-5 fw-semibold text-white mt-3 mb-1">Launch and support</h3>
                 <p>We ship, monitor, and stay on. Most of our clients have been with us for years.</p>
