@@ -1,60 +1,67 @@
-// The hero ring flies up and docks into the logo's "o" as you scroll.
-// Scroll-linked (not time-based), so it scrubs naturally in both directions.
+// Each section title's small ring flies up into the logo's "o" when the
+// section scrolls past the nav, and returns when you scroll back down.
 (function () {
-    var ring = document.querySelector(".jx-hero-ring");
-    var hero = document.querySelector(".jx-hero");
     var logoO = document.querySelector(".jx-logo-o");
     var nav = document.querySelector(".jx-nav");
-    if (!ring || !hero || !logoO || !nav) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var eyebrows = Array.prototype.slice.call(document.querySelectorAll(".jx-eyebrow"));
+    if (!logoO || !nav || !eyebrows.length) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    var base = null;
-
-    function measure() {
-        ring.style.transform = "";
-        var rr = ring.getBoundingClientRect();
-        var hr = hero.getBoundingClientRect();
-        base = { cx: rr.left + rr.width / 2 - hr.left, cy: rr.top + rr.height / 2 - hr.top, w: rr.width };
+    function fly(eb) {
+        if (reduced) return;
+        var r = eb.getBoundingClientRect();
+        var t = logoO.getBoundingClientRect();
+        var size = 10;
+        var sx = r.left + 1;
+        var sy = r.top + r.height / 2 - size / 2;
+        var el = document.createElement("span");
+        el.className = "jx-fly-ring";
+        el.style.left = sx + "px";
+        el.style.top = sy + "px";
+        if (eb.closest(".jx-dark")) el.style.borderColor = "#fff";
+        el.style.borderTopColor = "#2EE6A8";
+        document.body.appendChild(el);
+        var dx = t.left + t.width / 2 - (sx + size / 2);
+        var dy = t.top + t.height / 2 - (sy + size / 2);
+        var s = Math.max(t.width / size, 1);
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                el.style.transform = "translate(" + dx + "px, " + dy + "px) scale(" + s + ") rotate(45deg)";
+                el.style.borderColor = "#0B1E3F";
+                el.style.borderTopColor = "#2EE6A8";
+                el.style.opacity = "0";
+            });
+        });
+        el.addEventListener("transitionend", function done() {
+            el.removeEventListener("transitionend", done);
+            el.remove();
+            logoO.classList.remove("jx-docked");
+            logoO.getBoundingClientRect(); // restart the spin animation
+            logoO.classList.add("jx-docked");
+            setTimeout(function () { logoO.classList.remove("jx-docked"); }, 650);
+        });
     }
 
-    function update() {
-        if (getComputedStyle(ring).display === "none") {
-            ring.style.transform = "";
-            ring.style.opacity = "";
-            return;
-        }
-        if (!base) measure();
-        var travel = Math.max(hero.offsetHeight - nav.offsetHeight, 1);
-        var p = Math.min(Math.max(window.scrollY / travel, 0), 1);
-        if (p <= 0) {
-            ring.style.transform = "";
-            ring.style.opacity = "";
-            logoO.classList.remove("jx-docked");
-            return;
-        }
-        var hr = hero.getBoundingClientRect();
-        var t = logoO.getBoundingClientRect();
-        var baseCx = hr.left + base.cx;
-        var baseCy = hr.top + base.cy;
-        var dx = (t.left + t.width / 2 - baseCx) * p * p; // slide toward the logo late, once the ring is small
-        var dy = (t.top + t.height / 2 - baseCy) * p;
-        var s = 1 + (t.width / base.w - 1) * p;
-        ring.style.transform = "translate(" + dx + "px, " + dy + "px) translateY(-50%) scale(" + s + ")";
-        ring.style.opacity = p > 0.85 ? String(Math.max(1 - (p - 0.85) / 0.15, 0)) : "";
-        if (p >= 0.95) logoO.classList.add("jx-docked");
-        else if (p < 0.5) logoO.classList.remove("jx-docked");
+    function check(initial) {
+        var navBottom = nav.getBoundingClientRect().bottom;
+        eyebrows.forEach(function (eb) {
+            var crossed = eb.getBoundingClientRect().top < navBottom + 4;
+            if (crossed && !eb.classList.contains("jx-flown")) {
+                eb.classList.add("jx-flown");
+                if (!initial) fly(eb);
+            } else if (!crossed && eb.classList.contains("jx-flown")) {
+                eb.classList.remove("jx-flown");
+            }
+        });
     }
 
     var ticking = false;
-    function onScroll() {
+    window.addEventListener("scroll", function () {
         if (ticking) return;
         ticking = true;
-        requestAnimationFrame(function () { ticking = false; update(); });
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", function () { base = null; onScroll(); });
-    update();
+        requestAnimationFrame(function () { ticking = false; check(false); });
+    }, { passive: true });
+    check(true);
 })();
 
 // Draw the process-step arcs when they scroll into view.

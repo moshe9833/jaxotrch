@@ -116,6 +116,22 @@ body {
   vertical-align: -0.05rem;
 }
 .jx-dark .jx-eyebrow::before { border-color: #fff; border-top-color: var(--jaxo-mint); }
+.jx-eyebrow::before { transition: opacity 0.2s ease; }
+.jx-eyebrow.jx-flown::before { opacity: 0; }
+
+/* The section ring in flight toward the logo "o" (created by site.js) */
+.jx-fly-ring {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--jaxo-navy);
+  border-top-color: var(--jaxo-mint);
+  transform: rotate(45deg);
+  z-index: 2000;
+  pointer-events: none;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, opacity 0.2s ease 0.4s;
+}
 
 /* ---------- Hero watermark ring ---------- */
 .jx-hero { position: relative; }
@@ -128,8 +144,6 @@ body {
   width: 380px;
   height: 380px;
   pointer-events: none;
-  z-index: 1040; /* travels above the sticky nav while docking into the logo */
-  will-change: transform, opacity;
 }
 .jx-hero-sm .jx-hero-ring { width: 250px; height: 250px; right: 70px; }
 @media (max-width: 991.98px) { .jx-hero-ring { display: none; } }

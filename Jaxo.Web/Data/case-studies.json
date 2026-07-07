@@ -1,5 +1,35 @@
 [
   {
+    "slug": "checkomatic-inhouse-app",
+    "industry": "Checkomatic — check printing and fulfillment, New York",
+    "title": "The in-house app that runs Checkomatic",
+    "summary": "Orders, production, and fulfillment for a national check printer — one custom system that runs the whole operation end to end.",
+    "problem": "A national check printing business runs on details: every order carries custom artwork, bank data, and print specifications, and a mistake anywhere means reprints and missed ship dates. Off-the-shelf software was never built for that workflow, and the volume had outgrown what manual coordination could handle.",
+    "solution": "We built and maintain Checkomatic's in-house application. Orders come in from the web store and phone, move through proofing and production queues, and leave with carrier labels and tracking — all in one system the whole team works in. Print specifications, bank validation, and fulfillment rules live in the workflow instead of in people's heads.",
+    "result": "One system runs the operation end to end. Orders move from placed to printed to shipped without anything retyped, and the owners can see exactly where every order stands at any moment.",
+    "tags": ["In-house app", "Order management", "Production", "Fulfillment"]
+  },
+  {
+    "slug": "shoe-company-program-port",
+    "industry": "Footwear company",
+    "title": "Porting a shoe company's legacy program to the web",
+    "summary": "The desktop program the business ran on for years, rebuilt as a modern web application — same workflows, no installs, available anywhere.",
+    "problem": "The company ran on an aging desktop program that only worked on certain machines, couldn't be used outside the office, and got harder to maintain every year. The business logic inside it — styles, sizes, pricing, orders — was years of accumulated knowledge that existed nowhere else.",
+    "solution": "We ported the program to a modern web application. The workflows the team already knew stayed the same, the accumulated business rules were preserved and documented as code, and the new system runs in any browser — office, warehouse, or home.",
+    "result": "The business kept the software it knew, minus the installs and the aging hardware it depended on. Changes that were impossible in the old program are now routine work.",
+    "tags": ["Desktop-to-web", "Port", "Business systems"]
+  },
+  {
+    "slug": "warehouse-app",
+    "industry": "Wholesale distributor",
+    "title": "A warehouse app that runs receiving to shipping",
+    "summary": "Inventory, locations, picking, and shipping in one app built around how the warehouse actually works — with barcode scanning throughout.",
+    "problem": "Inventory lived in a mix of spreadsheets and memory. Receiving wasn't recorded consistently, nobody could say what was on a shelf without walking over to it, and picking mistakes only surfaced after packages had left the building.",
+    "solution": "We built a warehouse application around the building's real workflow: receiving records stock as it arrives, every item has a location, picking is scanned against the order so errors show up before boxes are sealed, and shipping is generated from what was actually packed.",
+    "result": "The team can see what's in stock and where it is, mistakes get caught at the scan instead of at the customer, and new warehouse staff are productive in days instead of months.",
+    "tags": ["Warehouse", "Inventory", "Barcode scanning"]
+  },
+  {
     "slug": "ecommerce-cloud-migration",
     "industry": "Commercial door hardware distributor",
     "title": "E-commerce rescue and cloud migration",
