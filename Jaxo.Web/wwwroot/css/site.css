@@ -121,13 +121,13 @@ body {
 .jx-hero-ring {
   position: absolute;
   top: 50%;
-  right: -60px;
+  right: 90px;
   transform: translateY(-50%);
-  width: 540px;
-  height: 540px;
+  width: 380px;
+  height: 380px;
   pointer-events: none;
 }
-.jx-hero-sm .jx-hero-ring { width: 360px; height: 360px; right: -40px; }
+.jx-hero-sm .jx-hero-ring { width: 250px; height: 250px; right: 70px; }
 @media (max-width: 991.98px) { .jx-hero-ring { display: none; } }
 .jx-hero h1 { letter-spacing: -0.02em; }
 
