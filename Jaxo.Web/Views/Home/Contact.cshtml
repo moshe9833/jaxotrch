@@ -79,10 +79,48 @@
     </div>
 </section>
 
+@{
+    var faqs = new[]
+    {
+        ("What does custom software cost?",
+         "It depends on scope, and you'll know before we start: every project gets a written, task-by-task estimate. Because we build with AI assistance, our estimates typically come in noticeably lower than traditional agencies — and you can pause, reprioritize, or stop at any point."),
+        ("How does AI make development cheaper?",
+         "Our engineers use AI coding tools on every project, so the routine work that used to take hours takes minutes. We bill by task, so when a task takes less time, it costs less — the savings are yours automatically. A senior engineer still reviews, tests, and owns every line before it ships."),
+        ("Do you only work with businesses in New York?",
+         "We're based in Monroe, NY, and most of our work happens remotely — we work with businesses across the United States. Being in the Eastern time zone, you can always reach us during your business day."),
+        ("Can you take over software someone else built?",
+         "Yes — rescues and takeovers are a regular part of our work: aging systems, struggling stores, and projects a previous vendor left behind. We start by reading the code and telling you honestly what shape it's in."),
+        ("How long does a project take?",
+         "Small integrations and fixes often ship within days; full systems take weeks rather than months, thanks to AI-assisted development. The written estimate you get up front includes a real timeline, so you know before anything is built.")
+    };
+    var faqJsonLd = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[" +
+        string.Join(",", faqs.Select(f =>
+            "{\"@type\":\"Question\",\"name\":" + System.Text.Json.JsonSerializer.Serialize(f.Item1) +
+            ",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":" + System.Text.Json.JsonSerializer.Serialize(f.Item2) + "}}")) +
+        "]}";
+}
+<script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+
+<section class="jx-section jx-section-light">
+    <div class="container">
+        <p class="jx-eyebrow mb-2">Common questions</p>
+        <h2>Before you ask</h2>
+        <div class="row mt-4 g-4">
+            @foreach (var (q, a) in faqs)
+            {
+                <div class="col-md-6">
+                    <h3 class="fs-6 fw-semibold">@q</h3>
+                    <p class="text-muted mb-0" style="font-size: 0.95rem;">@a</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
 @section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery.validate.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
     <script>
         var jxForm = document.querySelector(".jx-form");
         if (jxForm) jxForm.addEventListener("submit", function () {

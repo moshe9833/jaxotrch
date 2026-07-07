@@ -1,5 +1,14 @@
 @model CaseStudy
 
+@{
+    var titleJson = System.Text.Json.JsonSerializer.Serialize(Model.Title);
+    var breadcrumbJsonLd = "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[" +
+        "{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://jaxotech.com/\"}," +
+        "{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Our work\",\"item\":\"https://jaxotech.com/work\"}," +
+        $"{{\"@type\":\"ListItem\",\"position\":3,\"name\":{titleJson},\"item\":\"https://jaxotech.com/work/{Model.Slug}\"}}]}}";
+}
+<script type="application/ld+json">@Html.Raw(breadcrumbJsonLd)</script>
+
 <section class="jx-dark jx-section jx-hero jx-hero-sm">
     <partial name="_HeroRing" />
     <div class="container">

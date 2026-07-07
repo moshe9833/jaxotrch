@@ -1,3 +1,12 @@
+@{
+    var servicesJsonLd = "{\"@context\":\"https://schema.org\",\"@graph\":[" +
+        "{\"@type\":\"Service\",\"name\":\"E-commerce development\",\"serviceType\":\"E-commerce development\",\"description\":\"Online stores, checkout, product configuration, and performance work on proven platforms.\",\"provider\":{\"@type\":\"ProfessionalService\",\"name\":\"Jaxo\",\"url\":\"https://jaxotech.com/\"},\"areaServed\":\"US\"}," +
+        "{\"@type\":\"Service\",\"name\":\"Business systems\",\"serviceType\":\"Custom business software\",\"description\":\"Order management, production tracking, billing, and the custom internal software spreadsheets can't handle.\",\"provider\":{\"@type\":\"ProfessionalService\",\"name\":\"Jaxo\",\"url\":\"https://jaxotech.com/\"},\"areaServed\":\"US\"}," +
+        "{\"@type\":\"Service\",\"name\":\"Integrations\",\"serviceType\":\"Systems integration\",\"description\":\"Shipping carriers (FedEx, UPS), payment processors, accounting systems, and transactional email wired together.\",\"provider\":{\"@type\":\"ProfessionalService\",\"name\":\"Jaxo\",\"url\":\"https://jaxotech.com/\"},\"areaServed\":\"US\"}," +
+        "{\"@type\":\"Service\",\"name\":\"Cloud and hosting\",\"serviceType\":\"Cloud migration and hosting\",\"description\":\"Microsoft Azure migrations, performance, SSL and DNS, monitoring, and ongoing support.\",\"provider\":{\"@type\":\"ProfessionalService\",\"name\":\"Jaxo\",\"url\":\"https://jaxotech.com/\"},\"areaServed\":\"US\"}]}";
+}
+<script type="application/ld+json">@Html.Raw(servicesJsonLd)</script>
+
 <section class="jx-dark jx-section jx-hero jx-hero-sm">
     <partial name="_HeroRing" />
     <div class="container">

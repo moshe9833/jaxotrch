@@ -15,10 +15,36 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// 301 any non-canonical host (e.g. *.azurewebsites.net, www.) to the canonical
+// domain so search engines only ever index one copy of the site.
+var canonicalHost = app.Configuration["CanonicalHost"];
+if (!app.Environment.IsDevelopment() && !string.IsNullOrEmpty(canonicalHost))
+{
+    app.Use(async (context, next) =>
+    {
+        var host = context.Request.Host.Host;
+        if (!host.Equals(canonicalHost, StringComparison.OrdinalIgnoreCase) &&
+            !host.Equals("localhost", StringComparison.OrdinalIgnoreCase))
+        {
+            context.Response.Redirect(
+                $"https://{canonicalHost}{context.Request.PathBase}{context.Request.Path}{context.Request.QueryString}",
+                permanent: true);
+            return;
+        }
+        await next();
+    });
+}
+
 app.UseStaticFiles();
 app.UseRouting();
 
 app.UseStatusCodePagesWithReExecute("/Home/NotFound");
+
+app.MapControllerRoute(
+    name: "sitemap",
+    pattern: "sitemap.xml",
+    defaults: new { controller = "Home", action = "Sitemap" });
 
 app.MapControllerRoute(
     name: "casestudy",
