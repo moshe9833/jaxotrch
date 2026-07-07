@@ -17,6 +17,9 @@ ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Serv
   in display text (.jx-o), card hover corner arc (a.jx-card::before), footer ring
   divider + "Plan. Build. Launch. Full circle." tagline, 404 ring-as-zero, contact
   submit ring spinner, scroll-drawn step arcs (wwwroot/js/site.js + .jx-arc/.jx-check).
+- Signature interaction: the hero ring flies up and docks into the logo's "o" as you
+  scroll (site.js, scroll-linked so it scrubs both ways; .jx-logo-o spins once on dock;
+  disabled for prefers-reduced-motion and below lg).
 - Verbal hook: the arc closes when work ships — "full circle" = we launch and stay on.
 - Voice: plain language, outcomes not technology, sentence case, no corporate filler.
 

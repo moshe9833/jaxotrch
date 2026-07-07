@@ -32,6 +32,8 @@ body {
 /* ---------- Logo ---------- */
 .jx-logo { display: inline-flex; align-items: center; text-decoration: none; }
 .jx-logo svg { display: block; }
+.jx-logo-o { transform-box: fill-box; transform-origin: center; }
+.jx-logo-o.jx-docked { animation: jx-rotate 0.55s ease; }
 
 /* ---------- Nav ---------- */
 .jx-nav {
@@ -116,7 +118,7 @@ body {
 .jx-dark .jx-eyebrow::before { border-color: #fff; border-top-color: var(--jaxo-mint); }
 
 /* ---------- Hero watermark ring ---------- */
-.jx-hero { position: relative; overflow: hidden; }
+.jx-hero { position: relative; }
 .jx-hero > .container { position: relative; }
 .jx-hero-ring {
   position: absolute;
@@ -126,6 +128,8 @@ body {
   width: 380px;
   height: 380px;
   pointer-events: none;
+  z-index: 1040; /* travels above the sticky nav while docking into the logo */
+  will-change: transform, opacity;
 }
 .jx-hero-sm .jx-hero-ring { width: 250px; height: 250px; right: 70px; }
 @media (max-width: 991.98px) { .jx-hero-ring { display: none; } }
