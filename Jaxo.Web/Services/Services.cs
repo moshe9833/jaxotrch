@@ -41,7 +41,7 @@ public class EmailService : IEmailService
     public async Task<bool> SendContactAsync(ContactForm form)
     {
         var apiKey = _config["SendGrid:ApiKey"];
-        var toAddress = _config["SendGrid:ToAddress"] ?? "info@jaxotech.com";
+        var toAddress = _config["SendGrid:ToAddress"] ?? "moshe@jaxotech.com";
         var fromAddress = _config["SendGrid:FromAddress"] ?? "no-reply@jaxotech.com";
 
         if (string.IsNullOrWhiteSpace(apiKey))

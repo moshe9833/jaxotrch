@@ -45,8 +45,12 @@ ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Serv
 - Keep it a brochure site: no database, no CMS, no blog unless explicitly asked.
 - Code-first, concise responses. Bill-by-task mindset: small, reviewable commits.
 
+## Contact details (owner-confirmed)
+- Experience claim: "10+ years" (NOT 20 — Moshe corrected this).
+- Public email: moshe@jaxotech.com. Phone: (845) 662-6703 — shown in header,
+  footer, About, and Contact.
+
 ## Known TODOs
-- About page says "20+ years" — confirm real number with Moshe.
 - Case studies have qualitative results; replace with real numbers when available.
 - Case studies are anonymous EXCEPT the two website studies Moshe approved by name:
   SecurityParts.com and Checkomatic.com. No other client names anywhere.

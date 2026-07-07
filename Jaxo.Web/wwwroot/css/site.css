@@ -59,6 +59,7 @@ body {
   transition: transform 0.18s ease;
 }
 .jx-nav .nav-link:hover::after { transform: scaleX(1); }
+.jx-nav .jx-nav-phone { color: var(--jaxo-navy); font-weight: 600; white-space: nowrap; }
 
 /* ---------- Buttons ---------- */
 .btn-jaxo {
