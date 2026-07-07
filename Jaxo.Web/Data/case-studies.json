@@ -30,14 +30,24 @@
     "tags": ["Warehouse", "Inventory", "Barcode scanning"]
   },
   {
-    "slug": "secure-custom-website",
-    "industry": "National check printing company",
-    "title": "A custom website where security comes first",
-    "summary": "A custom e-commerce site for a business that handles bank information on every order — built to convert, and built to be trusted.",
-    "problem": "Selling checks online means customers type their bank details into your website. A generic storefront template was never designed for that responsibility — the company needed a site that looks professional, converts well, and treats every order's banking data with the care it deserves.",
-    "solution": "We built the company's website as custom software: a storefront and ordering flow designed around their products, with security built in from the first line — encrypted handling of bank details, hardened checkout and admin access, and locked-down hosting with SSL, monitoring, and clean email infrastructure.",
-    "result": "A website that does both jobs: it sells, and it protects. Customers order with confidence, and the owners know the sensitive data their business runs on is handled properly end to end.",
-    "tags": ["Custom website", "E-commerce", "Security"]
+    "slug": "securityparts-website",
+    "industry": "SecurityParts.com — commercial door hardware parts",
+    "title": "SecurityParts.com: find the right part from the diagram",
+    "summary": "A parts store built around product diagrams — locksmiths look up the exploded diagram and buy the exact part, not a guess.",
+    "problem": "Replacement parts for commercial door hardware are a minefield: one exit device has dozens of near-identical components, and a wrong part means a return and a locksmith stuck on a service call. Customers know where the part sits in the device — not its catalog number. A standard product-grid store can't sell that.",
+    "solution": "We customized SecurityParts.com around diagram lookup: pick the brand, series, and model, see the product's diagram, and buy the exact part straight from it. Part numbers, stock, and pricing hang off the diagram, and direct part-number search still works for the pros who know what they need.",
+    "result": "Locksmiths and facility managers order the right part the first time. The diagram does the explaining, wrong-part returns go down, and the store serves professionals without a phone call.",
+    "tags": ["Custom website", "E-commerce", "Product diagrams"]
+  },
+  {
+    "slug": "checkomatic-website",
+    "industry": "Checkomatic.com — checks and envelopes",
+    "title": "Checkomatic.com: checks and envelopes, customized online",
+    "summary": "A store built around layout customization — customers design their checks and envelopes online and see exactly what will print.",
+    "problem": "Checks aren't ordinary products. Every order is a custom layout — bank fields, logos, fonts, colors — and envelopes carry their own layout rules. On a generic storefront there's no way to design the product before you buy it, and a layout error doesn't mean a refund, it means an unusable product.",
+    "solution": "We customized Checkomatic.com around the product itself. Customers pick a check or envelope style and customize the layout online — bank information, logo, typography — with a live preview of exactly what will print. The approved layout travels with the order into production.",
+    "result": "Customers see their checks before they buy them, reorders take one click, and the layout that was approved is the layout that prints. Fewer proofing rounds, fewer reprints.",
+    "tags": ["Custom website", "E-commerce", "Product customization"]
   },
   {
     "slug": "ecommerce-cloud-migration",
