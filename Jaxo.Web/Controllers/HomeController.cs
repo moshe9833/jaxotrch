@@ -48,9 +48,10 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public IActionResult Contact()
+    public IActionResult Contact(bool sent = false)
     {
         ViewData["Title"] = "Get a quote";
+        ViewBag.Sent = sent;
         return View(new ContactForm());
     }
 
@@ -62,19 +63,16 @@ public class HomeController : Controller
 
         // Honeypot: bots fill hidden fields, humans don't
         if (!string.IsNullOrEmpty(form.Website))
-            return RedirectToAction(nameof(ContactThanks));
+            return RedirectToAction(nameof(Contact), new { sent = true });
 
         if (!ModelState.IsValid)
+        {
+            ViewBag.Sent = false;
             return View(form);
+        }
 
         await _email.SendContactAsync(form);
-        return RedirectToAction(nameof(ContactThanks));
-    }
-
-    public IActionResult ContactThanks()
-    {
-        ViewData["Title"] = "Thanks";
-        return View();
+        return RedirectToAction(nameof(Contact), new { sent = true });
     }
 
     public IActionResult Privacy()

@@ -30,7 +30,9 @@ ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Serv
 
 ## Structure
 - One controller (HomeController): Index, Services, Work, CaseStudy(slug), About,
-  Contact (GET/POST), ContactThanks, Privacy, Terms, NotFound, Error.
+  Contact (GET/POST — success redirects back to /contact?sent=true and the view
+  swaps the form for an inline thank-you; no separate thanks page), Privacy,
+  Terms, NotFound, Error.
 - Routes: /work/{slug} for case studies; everything else is /{action}.
 - Case study content: Data/case-studies.json (edit content there, not in views).
 - Contact form: server validation + honeypot (Website field) + SendGrid

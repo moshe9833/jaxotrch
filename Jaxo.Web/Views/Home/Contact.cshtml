@@ -13,6 +13,20 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-7">
+                @if (ViewBag.Sent == true)
+                {
+                    <div class="py-3">
+                        <svg width="56" height="56" viewBox="0 0 34 34" aria-hidden="true">
+                            <circle cx="17" cy="17" r="12" stroke="#2EE6A8" stroke-width="5" fill="none"/>
+                            <path d="M11.5 17 L15.5 21 L23 13" stroke="#0B1E3F" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h2 class="mt-3 mb-2">Message sent</h2>
+                        <p class="jx-lead mb-4">Thanks for reaching out. We'll get back to you within one business day.</p>
+                        <a class="btn btn-jaxo-outline" asp-action="Contact">Send another message</a>
+                    </div>
+                }
+                else
+                {
                 <form class="jx-form" method="post" asp-action="Contact">
                     @Html.AntiForgeryToken()
                     <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
@@ -51,6 +65,7 @@
                         </svg><span>Send message</span>
                     </button>
                 </form>
+                }
             </div>
             <div class="col-lg-4 offset-lg-1">
                 <div class="jx-card">
@@ -69,7 +84,8 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
     <script>
-        document.querySelector(".jx-form").addEventListener("submit", function () {
+        var jxForm = document.querySelector(".jx-form");
+        if (jxForm) jxForm.addEventListener("submit", function () {
             if (window.jQuery && !jQuery(this).valid()) return;
             var btn = document.getElementById("contactSubmit");
             btn.classList.add("jx-submitting");
