@@ -22,6 +22,10 @@ ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Serv
   disabled for prefers-reduced-motion and below lg).
 - Verbal hook: the arc closes when work ships — "full circle" = we launch and stay on.
 - Voice: plain language, outcomes not technology, sentence case, no corporate filler.
+- Key message (site-wide): AI-assisted development = faster delivery + significantly
+  lower cost, always paired with senior-engineer review ("AI writes the first draft,
+  engineers own every line"). Ties into bill-by-task: faster tasks = smaller invoices.
+  Never invent specific % or $ savings claims — qualitative until Moshe supplies numbers.
 
 ## Structure
 - One controller (HomeController): Index, Services, Work, CaseStudy(slug), About,
