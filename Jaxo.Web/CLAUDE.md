@@ -48,9 +48,10 @@ ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Serv
 ## Known TODOs
 - About page says "20+ years" — confirm real number with Moshe.
 - Case studies have qualitative results; replace with real numbers when available.
-- New flagship case studies (Checkomatic in-house app, shoe company program port,
-  warehouse app) were drafted from brief owner notes — Moshe must confirm the details,
-  and confirm Checkomatic is OK being named publicly (Work page says "named with
-  their blessing").
+- Case studies are ALWAYS anonymous — never display client names (owner decision;
+  Checkomatic was briefly named and then removed).
+- Flagship case studies (check printer in-house app, shoe company custom software,
+  warehouse app, secure custom website) were drafted from brief owner notes — Moshe
+  must confirm the details.
 - Favicon is SVG only; add .ico fallback for old browsers if desired.
 - OG/social meta tags not yet added.

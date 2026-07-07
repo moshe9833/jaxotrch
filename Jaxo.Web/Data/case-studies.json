@@ -1,23 +1,23 @@
 [
   {
-    "slug": "checkomatic-inhouse-app",
-    "industry": "Checkomatic — check printing and fulfillment, New York",
-    "title": "The in-house app that runs Checkomatic",
+    "slug": "check-printer-inhouse-app",
+    "industry": "National check printing and fulfillment company",
+    "title": "The in-house app that runs a national check printer",
     "summary": "Orders, production, and fulfillment for a national check printer — one custom system that runs the whole operation end to end.",
     "problem": "A national check printing business runs on details: every order carries custom artwork, bank data, and print specifications, and a mistake anywhere means reprints and missed ship dates. Off-the-shelf software was never built for that workflow, and the volume had outgrown what manual coordination could handle.",
-    "solution": "We built and maintain Checkomatic's in-house application. Orders come in from the web store and phone, move through proofing and production queues, and leave with carrier labels and tracking — all in one system the whole team works in. Print specifications, bank validation, and fulfillment rules live in the workflow instead of in people's heads.",
+    "solution": "We built and maintain the company's in-house application. Orders come in from the web store and phone, move through proofing and production queues, and leave with carrier labels and tracking — all in one system the whole team works in. Print specifications, bank validation, and fulfillment rules live in the workflow instead of in people's heads.",
     "result": "One system runs the operation end to end. Orders move from placed to printed to shipped without anything retyped, and the owners can see exactly where every order stands at any moment.",
     "tags": ["In-house app", "Order management", "Production", "Fulfillment"]
   },
   {
-    "slug": "shoe-company-program-port",
+    "slug": "shoe-company-custom-software",
     "industry": "Footwear company",
-    "title": "Porting a shoe company's legacy program to the web",
-    "summary": "The desktop program the business ran on for years, rebuilt as a modern web application — same workflows, no installs, available anywhere.",
-    "problem": "The company ran on an aging desktop program that only worked on certain machines, couldn't be used outside the office, and got harder to maintain every year. The business logic inside it — styles, sizes, pricing, orders — was years of accumulated knowledge that existed nowhere else.",
-    "solution": "We ported the program to a modern web application. The workflows the team already knew stayed the same, the accumulated business rules were preserved and documented as code, and the new system runs in any browser — office, warehouse, or home.",
-    "result": "The business kept the software it knew, minus the installs and the aging hardware it depended on. Changes that were impossible in the old program are now routine work.",
-    "tags": ["Desktop-to-web", "Port", "Business systems"]
+    "title": "Custom software built around a shoe company's details",
+    "summary": "Styles, sizes, widths, colors, and pricing — a custom system that handles the detail matrix a shoe business actually runs on.",
+    "problem": "Footwear is a detail business: every style comes in runs of sizes, widths, and colors, each with its own stock level, cost, and price rules. Generic software flattens all of that into a plain product list, so the team was working around their tools every day — and the real knowledge of the catalog lived in a few people's heads.",
+    "solution": "We built custom software around how the business actually works. Styles, size runs, widths, and colorways are first-class in the system, with stock, pricing, and ordering built on top of that structure. The details that used to be tribal knowledge are now in the software, visible to everyone who needs them.",
+    "result": "The team works in a system that speaks their language — styles and size runs, not generic SKUs. Orders are faster to enter, stock answers are instant, and the catalog knowledge no longer depends on who is in the office.",
+    "tags": ["Custom software", "Inventory", "Business systems"]
   },
   {
     "slug": "warehouse-app",
@@ -28,6 +28,16 @@
     "solution": "We built a warehouse application around the building's real workflow: receiving records stock as it arrives, every item has a location, picking is scanned against the order so errors show up before boxes are sealed, and shipping is generated from what was actually packed.",
     "result": "The team can see what's in stock and where it is, mistakes get caught at the scan instead of at the customer, and new warehouse staff are productive in days instead of months.",
     "tags": ["Warehouse", "Inventory", "Barcode scanning"]
+  },
+  {
+    "slug": "secure-custom-website",
+    "industry": "National check printing company",
+    "title": "A custom website where security comes first",
+    "summary": "A custom e-commerce site for a business that handles bank information on every order — built to convert, and built to be trusted.",
+    "problem": "Selling checks online means customers type their bank details into your website. A generic storefront template was never designed for that responsibility — the company needed a site that looks professional, converts well, and treats every order's banking data with the care it deserves.",
+    "solution": "We built the company's website as custom software: a storefront and ordering flow designed around their products, with security built in from the first line — encrypted handling of bank details, hardened checkout and admin access, and locked-down hosting with SSL, monitoring, and clean email infrastructure.",
+    "result": "A website that does both jobs: it sells, and it protects. Customers order with confidence, and the owners know the sensitive data their business runs on is handled properly end to end.",
+    "tags": ["Custom website", "E-commerce", "Security"]
   },
   {
     "slug": "ecommerce-cloud-migration",
@@ -41,8 +51,8 @@
   },
   {
     "slug": "shipping-automation",
-    "industry": "National check printing and fulfillment company",
-    "title": "Shipping automation for a high-volume printer",
+    "industry": "High-volume fulfillment company",
+    "title": "Shipping automation for a high-volume shipper",
     "summary": "FedEx and UPS integrated directly into the order system: live rates, automatic labels, and per-package cost tracking.",
     "problem": "Every order meant manual carrier lookups and hand-built shipping labels across FedEx and UPS. At their volume, that was hours of repetitive work each day, and nobody knew what any individual shipment actually cost.",
     "solution": "We integrated both carriers' APIs directly into their order system: live negotiated rates with transit times shown at checkout, automatic label generation the moment an order is ready, and per-package cost allocation tied back to every order.",
