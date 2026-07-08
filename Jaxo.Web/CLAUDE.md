@@ -66,6 +66,9 @@ ASP.NET Core 8 MVC, no database, single project + sln. Deploys to Azure App Serv
 - OG/Twitter tags in _Layout; share image wwwroot/img/og-card.png (1200x630).
 - All assets are SELF-HOSTED (wwwroot/lib, wwwroot/fonts + css/fonts.css) — do
   not reintroduce CDN links. contact?sent=true is noindex.
+- Performance: Brotli/Gzip response compression for css/js/svg (NOT html — BREACH),
+  1y immutable cache on /css /js /lib /fonts (fingerprinted), 30d on the rest,
+  latin font preloaded in _Layout. Mobile Lighthouse ~99 — keep it there.
 - Owner actions still pending: Google Business Profile, Search Console + submit
   sitemap, "Built by jaxo" links on client sites, agency directories.
 
